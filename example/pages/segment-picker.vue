@@ -15,6 +15,7 @@
   import Vue from 'vue'
   import createAPI from '@/modules/create-api'
   import { provinceList, cityList, areaList } from 'example/data/area'
+  import { data1, data2, data3 } from 'example/data/picker'
   // import { cascadeData } from 'example/data/cascade'
 
   createAPI(Vue, DatePicker, ['select', 'cancel'], false)
@@ -32,11 +33,11 @@
       this.segmentPicker = this.$createSegmentPicker({
         title: 'Segment Picker',
         data: [{
-          data: ['1', '2', '3']
+          data: [data1]
         }, {
-          data: ['1', '2', '3']
+          data: [data1, data2]
         }, {
-          data: ['1', '2', '3']
+          data: [data1, data2, data3]
         }]
         // selectedIndex: [0, 1, 0],
         // cancelTxt: 'Cancel',
@@ -46,26 +47,6 @@
         // onChange: () => {
         //   console.log('change')
         // }
-      })
-
-      this.cityPicker = this.$createCascadePicker({
-        title: 'City Picker',
-        data: cityData,
-        onSelect: this.selectHandle,
-        onCancel: this.cancelHandle
-      })
-
-      this.datePicker = this.$createDatePicker({
-        min: [2008, 8, 8],
-        max: [2020, 10, 20],
-        onSelect: this.selectHandle,
-        onCancel: this.cancelHandle
-      })
-
-      this.setDataPicker = this.$createCascadePicker({
-        title: 'Set Data',
-        onSelect: this.selectHandle,
-        onCancel: this.cancelHandle
       })
     },
     methods: {
